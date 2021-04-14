@@ -2,13 +2,19 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
-import hello.hellospring.repository.MemoryMemberRepository;
 
 import java.util.List;
 import java.util.Optional;
 
+//Test Tip:: Command + Shift + T
+
 public class MemberService {
-    private final MemberRepository memberRepository = new MemoryMemberRepository();
+    private final MemberRepository memberRepository;
+
+    //Repository를 외부에서 넣을수있도록 메서드를 사용 ==> DI: 의존성 주입 Dependency Inpendent
+    public MemberService(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
 
     /*
     - 회원 가입
@@ -43,7 +49,7 @@ public class MemberService {
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOnd(Long MemberId) {
+    public Optional<Member> findOne(Long MemberId) {
         return memberRepository.findById(MemberId);
     }
 }
