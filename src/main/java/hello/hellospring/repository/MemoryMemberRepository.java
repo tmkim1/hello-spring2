@@ -1,11 +1,13 @@
 package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
+import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
 
 //implements MemberRepository 작성하고 option + Enter 키 누르면 구현부 생성 시킬 수 있음 imple ~
+@Repository
 public class MemoryMemberRepository implements MemberRepository{
 
     //실무에서는 공유되는 변수에 대해서는 원래 컨클루드 해시맵을 사용해야 함. // 지금은 예시기 때문에 임시 사용.

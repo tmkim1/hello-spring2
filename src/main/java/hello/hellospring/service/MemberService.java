@@ -2,16 +2,21 @@ package hello.hellospring.service;
 
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 //Test Tip:: Command + Shift + T
 
+@Service
 public class MemberService {
     private final MemberRepository memberRepository;
 
     //Repository를 외부에서 넣을수있도록 메서드를 사용 ==> DI: 의존성 주입 Dependency Inpendent
+    //Autowired를 통해 인자에 사용되는 MemberRepository 객체를 스프링이 대입해줌 (DI)
+    @Autowired
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }
