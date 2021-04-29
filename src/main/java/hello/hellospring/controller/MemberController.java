@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 
 @Controller //스프링 컨테이너에서 스프링 빈이 관리 된다. ==> 스프링이 시작 될 때 Controller 어노테이션이 있는 아이들을 객체화 함.
 public class MemberController {
+
+    //매번 New로 객체를 생성하는게 아닌 스프링 컨테이너에 객체를 등록하여 공유하며 사용.
     private final MemberService memberService;
 
     //command + n => Constructor :: 생성자 생성

@@ -10,7 +10,7 @@ import java.util.Optional;
 
 //Test Tip:: Command + Shift + T
 
-@Service
+
 public class MemberService {
     private final MemberRepository memberRepository;
 
