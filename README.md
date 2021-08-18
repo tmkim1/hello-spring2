@@ -3,7 +3,7 @@
 <h3> H2 DATABASE 설치 </h3>
 
 - 권한 부여: chmod 755 h2.sh 
--     실행: ./h2.sh 
+- 실행: ./h2.sh 
     
 - 데이터베이스 파일 생성 방법
 접속 url: jdbc:h2:~/test (최초 한번), ~/test.mv.db 파일 생성 확인
