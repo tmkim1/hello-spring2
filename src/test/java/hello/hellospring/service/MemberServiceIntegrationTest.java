@@ -6,7 +6,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Commit;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
@@ -24,12 +23,11 @@ class MemberServiceIntegrationTest {
     MemberRepository memberRepository;
 
     @Test // Test 메서드 명은 과감하게 한글로 바꿔도 무방함.
-    @Commit
     void 회원가입() throws SQLException {
 
         //given
         Member member = new Member();
-        member.setName("spring");
+        member.setName("spring100");
         //when
         long saveId = memberService.join(member);
 
