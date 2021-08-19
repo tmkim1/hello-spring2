@@ -13,7 +13,7 @@ import java.sql.SQLException;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
-@Transactional
+@Transactional //transaction에 의해서 DB에 반영하려 한 쿼리가 자동으로 롤백이 됨.
 class MemberServiceIntegrationTest {
 
     //Test는 끝단에서 실행되기 때문에 Constructer에 의한 주입이 아닌 편하게 @Autowired를 사용해도 된다.
