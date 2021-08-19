@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @Controller //스프링 컨테이너에서 스프링 빈이 관리 된다. ==> 스프링이 시작 될 때 Controller 어노테이션이 있는 아이들을 객체화 함.
@@ -30,7 +31,7 @@ public class MemberController {
 
     //PostMapping은 data를 form에 넣어서 보냈을 때 해당 값들을 받기 위함.
     @PostMapping("members/new")
-    public String create(MemberForm form) {
+    public String create(MemberForm form) throws SQLException {
         Member member = new Member();
         member.setName(form.getName());
 

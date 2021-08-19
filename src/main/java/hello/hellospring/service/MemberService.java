@@ -5,6 +5,7 @@ import hello.hellospring.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,7 +25,7 @@ public class MemberService {
     /*
     - 회원 가입
      */
-    public long join(Member member) {
+    public long join(Member member) throws SQLException {
         // 같은 이름 중복 회원 X
         // tip: return 타입 자동 생성: option + command + v
 //        Optional<Member> result = memberRepository.findByName(member.getName());
@@ -45,7 +46,6 @@ public class MemberService {
                 throw new IllegalStateException("이미 존재하는 회원입니다.");
             });
     }
-
     /**
      * 전체 회원 조회
      */
